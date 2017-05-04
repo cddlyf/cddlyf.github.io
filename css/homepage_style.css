@@ -73,7 +73,7 @@ hr {
   margin-bottom: 20px;
 }
 .paper-image {
-  width: 100%;
+  width: 90%;
   padding-bottom: 20px;
 }
 .logo-image {
@@ -82,6 +82,8 @@ hr {
   vertical-align: middle;
   margin-bottom: 10px;
 }
+
+
 
 .logo-div {
   margin-bottom: 20px;
