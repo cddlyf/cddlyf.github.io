@@ -17,7 +17,7 @@
         <center>
             <div style='color:red'>图片: <div id='image_idx'>0</div> </div>
             <div style='color:red'> 剩余时间 </div>
-            <div id='time'> 3s </div>
+            <div id='time'> 10s </div>
         </center>
     </div>
     <div class='row' style='padding-top: 50px'>        
@@ -80,7 +80,7 @@
       curr_folder = curr_src.substring(0,4)
       curr_index = parseInt(curr_src.substring(10,curr_src.length-4));
       if(curr_folder=='prac' && curr_index==(practice_num-1)){
-        img_folder = 'rand';
+        img_folder = 'top1';
         curr_index = -1;
         total_num = real_num
       }
@@ -157,7 +157,7 @@
       answer_list[curr_index] = curr_flag;
     }
     if(curr_flag==-1){
-      alert("请3s内完成选择!")
+      alert("请10s内完成选择!")
     }
     console.log(""+curr_flag + ' is selected for index: ' + curr_index);
     window.clearInterval(t1);
@@ -181,7 +181,7 @@
       alert("请10s内完成选择!")
       window.clearInterval(t1);
     }
-    answer_list[curr_index] = flag;
+    answer_list[curr_index-1] = flag;
     nextPage();
   };
   $("#left_image").on( "click", finishselectLeft);
