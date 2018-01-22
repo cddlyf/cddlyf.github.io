@@ -17,7 +17,7 @@
         <center>
             <div style='color:red'>图片: <div id='image_idx'>0</div> </div>
             <div style='color:red'> 剩余时间 </div>
-            <div id='time'> 3s </div>
+            <div id='time'> 10s </div>
         </center>
     </div>
     <div class='row' style='padding-top: 50px'>        
@@ -38,7 +38,7 @@
   </div>
   <script>
   var t1 = window.setInterval(timer_str, 1000);
-  var remain_time = 3;
+  var remain_time = 10;
   var curr_index = 0;
   
   var curr_flag = -1
@@ -71,7 +71,7 @@
     document.getElementById("left_image").style.outline='0px';
     document.getElementById("right_image").style.outline='0px';
     curr_flag = -1;
-    remain_time = 3;
+    remain_time = 10;
   }
 
   var nextPage = function(){
@@ -157,7 +157,7 @@
       answer_list[curr_index] = curr_flag;
     }
     if(curr_flag==-1){
-      alert("请3s内完成选择!")
+      alert("请10s内完成选择!")
     }
     console.log(""+curr_flag + ' is selected for index: ' + curr_index);
     window.clearInterval(t1);
@@ -178,7 +178,7 @@
       console.log(""+flag + ' is selected for index: ' + curr_index);
       window.clearInterval(t1);
     }else{
-      alert("请3s内完成选择!")
+      alert("请10s内完成选择!")
       window.clearInterval(t1);
     }
     answer_list[curr_index-1] = flag;
