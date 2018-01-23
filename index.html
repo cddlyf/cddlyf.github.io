@@ -1,192 +1,169 @@
 
 <html>
   	<head>
-	    <title>User Study</title>
+	    <title>Dongdong Chen</title>
 	    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
 	    <link href='css/bootstrap.min.css' rel='stylesheet'>
 	    <link href='css/homepage_style.css' rel='stylesheet'>
 	    <script src='js/bootstrap.min.js'></script>
-      <script src="js/FileSaver.min.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-96260956-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
       <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,100italic,100,300,300italic,400italic,500italic,900italic,700italic' rel='stylesheet' type='text/css'>
 	</head>
-
 	<body>
-  <div class='container', style="padding-top: 100px">
-    <div class='row'>
-        <center><div style='font-size: 50px;color:red; padding-left: 100px'>请点击你认为更自然的图片！</div></center>
-        <center>
-            <div style='color:red'>图片: <div id='image_idx'>0</div> </div>
-            <div style='color:red'> 剩余时间 </div>
-            <div id='time'> 3s </div>
-        </center>
+		<div id='header' class ='bg'>
+	      	<div id='header-inner'>
+		        <img src='images/donnie_chen.png' class='img-me'>
+		        <div class='header-text'>
+		          <div class='header-text-name'>
+		            Dongdong Chen
+		          </div>
+		          <div class='header-text-email'>
+		            cddlyf at gmail dot com
+		          </div>
+		        </div>
+	    	</div>
+    	</div>
+    	<div class='container'>
+      		<div class='col-xs-12'>
+
+        	<div class='row about'>
+          <p>I am currently a third-year Ph.D. student in <a href="http://en.ustc.edu.cn/", target="_blank">University of Science and Technology of China (USTC)</a>, under the joint PhD program between MSRA and USTC. Now, I am luckily advised by <a href="http://www.ganghua.org/", target="_blank">Gang Hua</a> and <A href="http://staff.ustc.edu.cn/~ynh/", target="_blank">Prof. Nenghai Yu</A>. I collaborate closely  with <A href="https://www.microsoft.com/en-us/research/people/luyuan/", target="_blank">Lu Yuan</A> and <A href="https://www.microsoft.com/en-us/research/people/jliao/", target="_blank">Jing Liao</A>. In the early stage of my research period, I was also very fortunate to be supervised by <a href="http://sist.shanghaitech.edu.cn/StaffDetail.asp?id=387", target="_blank">Yi Ma</a> and <a href="http://www.jiansun.org/", target="_blank">Jian Sun</a> respectively. </p>
+          <p> My research interests are in computer vision, machine learning, and deep learning. I'm particularly interested in the areas of image generation, style transfer and object detection.</p>
+        </div>
+
+        <div class='row'>
+          <hr>
+        </div>
+
+
+        <div class='row'>
+          <h1>Publications</h1>
+        </div>
+
+        <div class='row vspace-top-small'>
+          <div class='col-xs-2'>
+            <img class="paper-image" src="images/covst_nail.gif">
+          </div>
+          <div class='col-xs-10'>
+            <div class='paper-title'>
+              Coherent Online Video Style Transfer
+            </div>
+            <div class='paper-authors'>
+              <b>Dongdong Chen</b>, Jing Liao, Lu Yuan, Nenghai Yu, Gang Hua
+            </div>
+            <div class='paper-venue'>
+              ICCV 2017
+            </div>
+            <div>
+              <a target="_blank" href="pubs/coherent_video_st.pdf">[pdf]</a>
+              <a target="_blank" href="https://www.youtube.com/watch?v=vMyMUNvsGfQ">[video]</a>
+            </div>
+          </div>
+        </div>
+
+        <div class='row vspace-top-small'>
+          <div class='col-xs-2'>
+            <img class="paper-image" src="images/stylebank_nail.gif">
+          </div>
+          <div class='col-xs-10'>
+            <div class='paper-title'>
+              StyleBank: An Explicit Representation for Neural Image Style Transfer
+            </div>
+            <div class='paper-authors'>
+              <b>Dongdong Chen</b>, Lu Yuan, Jing Liao, Nenghai Yu, Gang Hua
+            </div>
+            <div class='paper-venue'>
+              CVPR 2017
+            </div>
+            <div>
+              <a target="_blank" href="pubs/stylebank_cvpr2017.pdf">[pdf]</a>
+              <a target="_blank" href="pubs/sbk_supp.pdf">[supplementary]</a>
+              <a target="_blank" href="https://www.youtube.com/watch?v=RA0NHlsLT4A">[video]</a>
+            </div>
+			<div>
+			  <a target="_blank" href="http://www.msra.cn/zh-cn/news/blogs/2017/06/microsoft-pix-20170616.aspx"><font color="red">Congrats! Our technique is adopted by Microsoft Pix.</font><a>
+			</div>
+          </div>
+        </div>
+
+        <div class='row vspace-top-small'>
+          <div class='col-xs-2'>
+            <img class="paper-image" src="images/3d_mov.png">
+          </div>
+          <div class='col-xs-10'>
+            <div class='paper-title'>
+              Automatic Extraction of Moving Objects from Image and LIDAR Sequences
+            </div>
+            <div class='paper-authors'>
+              Jizhou Yan, <b>Dongdong Chen</b>, Heesoo Myeong, Takaaki Shiratori, Yi Ma
+            </div>
+            <div class='paper-venue'>
+              International Conference on 3D Vision 2014
+            </div>
+            <div>
+              <a href="pubs/3dv_2014.pdf">[pdf]</a></a>
+            </div>
+          </div>
+        </div>
+
+        <div class='row'>
+          <hr>
+        </div>
+
+        <div class='row'>
+          <h1>Experience</h1>
+        </div>
+
+        <div class='row vspace-top-small'>
+          <div>
+            <b>2010.08~2014.06: </b> &nbsp;&nbsp;Bachelor in Electrical Engineering in University of Science and Technology of China
+          </div>
+          <div>
+            <b>2013.07~2014.05: </b> &nbsp;&nbsp;Intern in MSRA advised by Yi Ma and Jian Sun respectively
+          </div>
+          <div>
+            <b>2015.07~2015.10: </b> &nbsp;&nbsp;Intern in Alibaba Group Beijing
+          </div>
+          <div>
+            <b>2015.11~Now: </b> &thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Intern in MSRA advised by Jian Sun and Gang Hua respectively.
+          </div>
+        </div>
+
+        <div class='row'>
+          <hr>
+        </div>
+
+        <div class='row'>
+          <h1>Awards and Honors</h1>
+        </div>
+
+        <div class='row vspace-top-small'>
+          <div>
+          National ScholarShip, Nov 2012
+          </div>
+          <div>
+          National ScholarShip, Nov 2013
+          </div>
+          <div>
+          Grand Prize (1/1438 teams) in CCF National Youth Innovation Contest of Big Data 2015
+          </div>
+          <div>
+          Top 5 in Tianyi Algorithm Contest of Big Data 2016
+          </div>
+          <div>
+          Best Demo Prize of Di-Tech Algorithm Contest of Big Data 2016
+          </div>
+        </div>
+      </div>
     </div>
-    <div class='row' style='padding-top: 50px'>        
-        <div class="col-xs-2 col-md-2" >
-        </div>
-        <div class="col-xs-4 col-md-4" >
-          <center>
-          <img id="left_image" style="width: 256px;outline:0px" src="prac/left_0.png">
-          </center>
-        </div>
-        
-        <div class=class="col-xs-4 col-md-4">
-          <center>
-            <img id="right_image" style="width: 256px; outline:0px"  src="prac/right_0.png">
-          </center>
-        </div>
-    </div>
-  </div>
-  <script>
-  var t1 = window.setInterval(timer_str, 1000);
-  var remain_time = 10;
-  var curr_index = 0;
-  
-  var curr_flag = -1
-  var img_folder = 'prac' <!-- prac, rand, top1 -->
-  var practice_num = 10
-  var real_num = 50
-  var total_num = practice_num
-  var answer_list = new Array(practice_num+real_num);
-
-  function timer_str(){
-    remain_time = remain_time - 1;
-    if(remain_time<=0){
-      finishTimeSelect();
-    }else{
-      $("#time").html(" " + remain_time + " s");
-    }
-  }
-  function wait(ms){
-   var start = new Date().getTime();
-   var end = start;
-   while(end < start + ms) {
-     end = new Date().getTime();
-  }
-  }
-  var valChecked = function() {
-    var checkval = $("input:checked").val();
-  };
-  
-  var reset = function(){
-    document.getElementById("left_image").style.outline='0px';
-    document.getElementById("right_image").style.outline='0px';
-    curr_flag = -1;
-    remain_time = 10;
-  }
-
-  var nextPage = function(){
-      reset();
-      curr_src = $("#left_image").attr("src");
-      curr_folder = curr_src.substring(0,4)
-      curr_index = parseInt(curr_src.substring(10,curr_src.length-4));
-      if(curr_folder=='prac' && curr_index==(practice_num-1)){
-        img_folder = 'rand';
-        curr_index = -1;
-        total_num = real_num
-      }
-      next_idx = curr_index + 1;
-      if(next_idx < total_num){
-        $("#time").html(""+remain_time + " s");
-        t1 = window.setInterval(timer_str, 1000);
-                        
-        $("#left_image").attr('src', img_folder+"/left_" + next_idx + ".png")
-        $("#right_image").attr('src', img_folder+ "/right_" + next_idx + ".png")
-        if (curr_folder=='prac'){
-          $('#image_idx').html(""+next_idx)  
-        }else{
-          real_next_idx = practice_num + next_idx
-          $('#image_idx').html(""+real_next_idx)  
-        }
-        
-      }else{
-        result_content = ""
-        for(i = 1; i <= practice_num+real_num; i++){
-          if(i <= practice_num){
-            result_content = result_content + "practice idx: "+i+",rst:"+answer_list[i-1]+"\n";
-          }else{
-            real_i = i - practice_num;
-            result_content = result_content + "real idx: "+real_i+",rst:"+answer_list[i-1]+"\n";
-          }
-        }
-        var blob = new Blob([result_content], {type: "text/plain;charset=utf-8"});
-        saveAs(blob, "answers.txt")
-        alert("感谢完成所有实验，务必下载页面弹出的txt并发送给我们!");
-      }
-  }
-
-  var finishselectLeft = function(){
-    curr_src = $("#left_image").attr('src');
-    curr_folder = curr_src.substring(0,4);
-    curr_index = parseInt(curr_src.substring(10,curr_src.length-4));
-    curr_flag = 0;
-    if(curr_folder!='prac'){
-      answer_list[curr_index+practice_num] = curr_flag;
-    }else{
-      answer_list[curr_index] = curr_flag;
-    }
-    console.log(""+curr_flag + ' is selected for index: ' + curr_index);
-    window.clearInterval(t1);
-    nextPage();
-  };
-
-  var finishselectRight = function(){
-    curr_src = $("#left_image").attr('src');
-    curr_folder = curr_src.substring(0,4);
-    curr_index = parseInt(curr_src.substring(10,curr_src.length-4))
-    if (curr_index<0 || curr_index > total_num){
-      alert("程序出错，请通知我们！")
-    }
-    curr_flag = 1
-    if(curr_folder!='prac'){
-      answer_list[curr_index+practice_num] = curr_flag;
-    }else{
-      answer_list[curr_index] = curr_flag;
-    }
-    console.log(""+curr_flag + ' is selected for index: ' + curr_index);
-    window.clearInterval(t1);
-    nextPage();
-  };
-
-  var finishTimeSelect = function(){
-    curr_src = $("#left_image").attr('src');
-    curr_folder = curr_src.substring(0,4);
-    curr_index = parseInt(curr_src.substring(10, curr_src.length-4))
-     if(curr_folder!='prac'){
-      answer_list[curr_index+practice_num] = curr_flag;
-    }else{
-      answer_list[curr_index] = curr_flag;
-    }
-    if(curr_flag==-1){
-      alert("请3s内完成选择!")
-    }
-    console.log(""+curr_flag + ' is selected for index: ' + curr_index);
-    window.clearInterval(t1);
-    nextPage();
-  };
-
-  var finishSelect = function(){
-    curr_src = $("#left_image").attr('src');
-    curr_index = parseInt(curr_src.substring(10,curr_src.length-4))
-    flag = -1
-    if($("input:checked").length==1){
-      var checkval = $("input:checked").val();
-      if(checkval=="left"){
-        flag=0;
-      }else{
-        flag=1;
-      }      
-      console.log(""+flag + ' is selected for index: ' + curr_index);
-      window.clearInterval(t1);
-    }else{
-      alert("请10s内完成选择!")
-      window.clearInterval(t1);
-    }
-    answer_list[curr_index] = flag;
-    nextPage();
-  };
-  $("#left_image").on( "click", finishselectLeft);
-  $("#right_image").on( "click", finishselectRight);
-  
-</script>
 	</body>
 </html>
