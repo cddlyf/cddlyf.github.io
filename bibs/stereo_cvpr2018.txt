@@ -1,0 +1,6 @@
+@article{chen2018stereoscopic,
+  title={Stereoscopic Neural Style Transfer},
+  author={Chen, Dongdong and Yuan, Lu and Liao, Jing and Yu, Nenghai and Hua, Gang},
+  journal={CVPR 2018},
+  year={2018}
+}

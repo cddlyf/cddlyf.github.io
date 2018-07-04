@@ -1,0 +1,6 @@
+@article{d2017coherent,
+  title={Coherent Online Video Style Transfer},
+  author={D Chen, J Liao, L Yuan, N Yu, G Hua},
+  journal={ICCV 2017},
+  year={2017}
+}
