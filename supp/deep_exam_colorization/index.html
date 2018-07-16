@@ -1,0 +1,1549 @@
+
+<html>
+  	<head>
+	    <title>Deep Examplar-based Colorization</title>
+	</head>
+  <style type="text/css">
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li{
+        float: left;
+    }
+
+    li a.nav{
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+        background-color: #111;
+    }
+    #nav {
+      width: 100%;
+      top:0;
+      position:fixed;
+    }
+  </style>
+	<body>
+     <ul id='nav'>
+      <li><a href="index.html"   class='nav'>Example Based Comparison</a></li>
+      <li><a href="learning_based.html"  class='nav'>Learning Based Comparison</a></li>
+      <li><a href="legacy_photos.html" class='nav'>Legacy Photo Collection</a></li>
+      <li><a href="user_study.html"  class='nav'>User Study</a></li>
+      <li><a href="video.html"  class='nav'>Video</a></li>
+    </ul>
+    <div id='exampled_based_content'>
+      <table border="0" style="table-layout: fixed; text-align:center; padding-top: 80px;">
+        <tbody>
+          <tr style="font-size:20px; padding-bottom: 10px">
+            <th colspan="1" halign="center" scope="colgroup" style="word-wrap: break-word;" valign="top">
+              <p>Input</p>
+            </th>
+            <th colspan="1" halign="center" scope="colgroup" style="word-wrap: break-word; " valign="top">
+              <p>Reference</p>
+            </th>
+            <th colspan="1" halign="center" scope="colgroup" style="word-wrap: break-word; " valign="top">
+              <p>Welsh et al.[2002]</p>
+            </th>
+            <th colspan="1" halign="center" scope="colgroup" style="word-wrap: break-word; " valign="top">
+              <p>Ironi et al.[2005]</p>
+            </th>
+            <th colspan="1" halign="center" scope="colgroup" style="word-wrap: break-word; " valign="top">
+              <p>Charpiat et al.[2008]</p>
+            </th>
+            <th colspan="1" halign="center" scope="colgroup" style="word-wrap: break-word; " valign="top">
+              <p>Gupta et al.[2012]</p>
+            </th>
+            <th colspan="1" halign="center" scope="colgroup" style="word-wrap: break-word; "  valign="top">
+              <p>Bugeau and Ta[2012]</p>
+            </th>
+            <th colspan="1" halign="center" scope="colgroup" style="word-wrap: break-word; "  valign="top">
+              <p>Ours</p>
+            </th>
+          </tr>        
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0001.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0001.jpg" alt='None' style="width:auto; max-height: 187px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0001.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0001.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0001.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0001.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0001.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0001.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0002.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0002.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0002.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0002.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0002.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0002.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0002.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0002.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0003.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0003.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0003.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0003.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0003.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0003.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0003.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0003.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0004.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0004.jpg" alt='None' style="width:auto; height: 160px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0004.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0004.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0004.jpg" alt='None' style="width:auto; height: 160px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0004.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0004.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0004.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0005.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0005.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0005.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0005.jpg" alt='None' style="width:auto; max-height: 133px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0005.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0005.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0005.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0005.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0006.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0006.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0006.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0006.jpg" alt='None' style="width:auto;height: 150px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0006.jpg" alt='None' style="width:auto;height: 150px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0006.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0006.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0006.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0008.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0008.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0008.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0008.jpg" alt='None' style="width:auto; height: 133px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0008.jpg" alt='None' style="width:auto; height: 133px;  margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0008.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0008.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0008.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0009.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0009.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0009.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0009.jpg" alt='None' style="width:auto; height: 150px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0009.jpg" alt='None' style="width:auto; height: 150px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0009.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0009.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0009.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0010.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0010.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0010.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0010.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0010.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0010.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0010.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0010.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0011.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0011.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0011.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0011.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0011.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0011.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0011.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0011.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0012.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0012.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0012.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0012.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0012.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0012.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0012.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0012.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+         <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0013.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0013.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0013.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0013.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0013.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0013.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0013.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0013.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0014.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0014.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0014.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0014.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0014.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0014.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0014.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0014.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0015.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0015.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0015.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0015.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0015.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0015.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0015.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0015.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0016.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0016.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0016.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0016.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0016.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0016.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0016.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0016.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0017.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0017.jpg" alt='None' style="width:auto; max-height: 133px;margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0017.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0017.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0017.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0017.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0017.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0017.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0018.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0018.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0018.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0018.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0018.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0018.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0018.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0018.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0019.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0019.jpg" alt='None' style="width:auto; height: 215px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0019.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0019.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0019.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0019.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0019.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0019.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0020.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0020.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0020.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0020.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0020.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0020.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0020.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0020.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0021.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0021.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0021.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0021.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0021.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0021.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0021.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0021.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0022.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0022.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0022.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0022.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0022.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0022.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0022.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0022.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0023.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0023.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0023.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0023.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0023.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0023.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0023.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0023.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0024.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0024.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0024.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0024.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0024.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0024.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0024.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0024.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0025.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0025.jpg" alt='None' style="width:auto; height:123px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0025.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0025.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0025.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0025.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0025.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0025.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Input/gray_0026.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Reference/ref_0026.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Welsh_transfer/transfergray_0026.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>          
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Ironi_byexample/colorbyexample_0026.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Charpiat_multimodal/modal_0026.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Gupta_similar/colorsimilarimage_0026.png" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Bugeau_var/vari_0026.png" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>       
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Ours/our_0026.png" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+          </tr>
+        <tr>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Input/gray_0027.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Reference/ref_0027.jpg" alt='None' style="width:auto; height:206px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Welsh_transfer/transfergray_0027.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Ironi_byexample/colorbyexample_0027.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Charpiat_multimodal/modal_0027.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Gupta_similar/colorsimilarimage_0027.png" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+             <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0027.png" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0027.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+          <tr>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Input/gray_0028.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Reference/ref_0028.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Welsh_transfer/transfergray_0028.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Ironi_byexample/colorbyexample_0028.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Charpiat_multimodal/modal_0028.jpg" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Gupta_similar/colorsimilarimage_0028.png" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Bugeau_var/vari_0028.png" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+            <td halign="center" style="word-wrap: break-word;" valign="top">
+              <a href="">
+                <img src="images/example_based/Ours/our_0028.png" alt='None' style="width:200px; margin:2px;">
+              </a>
+            </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0029.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0029.jpg" alt='None' style="width:auto; max-height:126px;margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0029.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0029.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0029.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0029.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0029.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0029.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0030.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0030.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0030.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0030.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0030.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0030.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0030.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0030.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0031.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0031.jpg" alt='None' style="width:auto; height:125px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0031.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0031.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0031.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0031.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0031.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0031.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0032.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0032.jpg" alt='None' style="width:auto; height: 115px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0032.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0032.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0032.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0032.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0032.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0032.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0033.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0033.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0033.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0033.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0033.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0033.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0033.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0033.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0034.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0034.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0034.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0034.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0034.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0034.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0034.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0034.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0035.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0035.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0035.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0035.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0035.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0035.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0035.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0035.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Input/gray_0036.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Reference/ref_0036.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Welsh_transfer/transfergray_0036.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ironi_byexample/colorbyexample_0036.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Charpiat_multimodal/modal_0036.jpg" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Gupta_similar/colorsimilarimage_0036.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Bugeau_var/vari_0036.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+          <td halign="center" style="word-wrap: break-word;" valign="top">
+            <a href="">
+              <img src="images/example_based/Ours/our_0036.png" alt='None' style="width:200px; margin:2px;">
+            </a>
+          </td>
+        </tr>                  
+      </tbody>
+      </table>
+    </div>    
+	</body>
+</html>
