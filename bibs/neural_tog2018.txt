@@ -1,0 +1,6 @@
+@article{he2018progressive,
+  title={Progressive Color Transfer with Dense Semantic Correspondences},
+  author={He, Mingming and Liao, Jing and Chen, Dongdong and Yuan, Lu and Sander, Pedro V},
+  journal={ACM Transactions on Graphics (TOG)},
+  year={2018}
+}
