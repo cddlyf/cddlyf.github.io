@@ -1,0 +1,6 @@
+@inproceedings{han2019once,
+  title={Once a MAN: Towards Multi-Target Attack via Learning Multi-Target Adversarial Network Once},
+  author={Han, Jiangfan and Dong, Xiaoyi and Zhang, Ruimao and Chen, Dongdong and Zhang, Weiming and Yu, Nenghai and Luo, Ping and Wang, Xiaogang},
+  booktitle={Proceedings of the IEEE International Conference on Computer Vision (ICCV),},
+  year={2019}
+}

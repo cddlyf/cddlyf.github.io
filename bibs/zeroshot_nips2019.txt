@@ -1,0 +1,6 @@
+@inproceedings{wan2019transductive,
+  title={Transductive Zero-Shot Learning with Visual Structure Constraint},
+  author={Wan, Ziyu and Chen, Dongdong and Li, Yan and Yan, Xingguang and Zhang, Junge and Yu, Yizhou and Liao, Jing},
+  booktitle={Thirty-third Conference on Neural Information Processing Systems (NeurIPS)},
+  year={2019}
+}

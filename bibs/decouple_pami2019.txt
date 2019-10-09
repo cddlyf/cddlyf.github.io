@@ -1,0 +1,7 @@
+@article{fan2019general,
+  title={A General Decoupled Learning Framework for Parameterized Image Operators},
+  author={Fan, Qingnan and Chen, Dongdong and Yuan, Lu and Hua, Gang and Yu, Nenghai and Chen, Baoquan},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2019},
+  publisher={IEEE}
+}
