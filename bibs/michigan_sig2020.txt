@@ -1,0 +1,10 @@
+@article{tan2020michigan,
+  title={MichiGAN: multi-input-conditioned hair image generation for portrait editing},
+  author={Tan, Zhentao and Chai, Menglei and Chen, Dongdong and Liao, Jing and Chu, Qi and Yuan, Lu and Tulyakov, Sergey and Yu, Nenghai},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={39},
+  number={4},
+  pages={95--1},
+  year={2020},
+  publisher={ACM New York, NY, USA}
+}

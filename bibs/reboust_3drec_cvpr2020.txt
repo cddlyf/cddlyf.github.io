@@ -1,0 +1,7 @@
+@InProceedings{Dong_2020_CVPR,
+author = {Dong, Xiaoyi and Chen, Dongdong and Zhou, Hang and Hua, Gang and Zhang, Weiming and Yu, Nenghai},
+title = {Self-Robust 3D Point Recognition via Gather-Vector Guidance},
+booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2020}
+}

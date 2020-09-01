@@ -1,0 +1,7 @@
+@InProceedings{Zhou_2020_CVPR,
+author = {Zhou, Hang and Chen, Dongdong and Liao, Jing and Chen, Kejiang and Dong, Xiaoyi and Liu, Kunlin and Zhang, Weiming and Hua, Gang and Yu, Nenghai},
+title = {LG-GAN: Label Guided Adversarial Network for Flexible Targeted Attack of Point Cloud Based Deep Networks},
+booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2020}
+}
