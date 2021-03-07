@@ -1,0 +1,6 @@
+@inproceedings{wei2020improved,
+  title={Improved Image Matting via Real-time User Clicks and Uncertainty Estimation},
+  author={Wei, Tianyi and Chen, Dongdong and Zhou, Wenbo and Liao, Jing and Zhao, Hanqing and Zhang, Weiming and Yu, Nenghai},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2021}
+}

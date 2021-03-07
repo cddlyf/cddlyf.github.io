@@ -1,0 +1,6 @@
+@inproceedings{zhao2021multi,
+  title={Multi-attentional Deepfake Detection},
+  author={Zhao, Hanqing and Zhou, Wenbo and Chen, Dongdong and Wei, Tianyi and Zhang, Weiming and Yu, Nenghai},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2021}
+}

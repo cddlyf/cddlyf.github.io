@@ -1,0 +1,6 @@
+@inproceedings{dai2021dyhead,
+  title={Dynamic Head: Unifying Object Detection Heads with Attentions},
+  author={Dai, Xiyang and Chen, Yinpeng and Xiao, Bin and Chen, Dongdong and Liu, Mengchen and Yuan, Lu and Zhang, Lei},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2021}
+}
