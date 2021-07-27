@@ -1,0 +1,7 @@
+@article{zhang2020passport,
+  title={Passport-aware Normalization for Deep Model Protection},
+  author={Zhang, Jie and Chen, Dongdong and Liao, Jing and Zhang, Weiming and Hua, Gang and Yu, Nenghai},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  year={2020}
+}

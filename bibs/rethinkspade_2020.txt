@@ -4,3 +4,11 @@
   journal={arXiv preprint arXiv:2004.02867},
   year={2020}
 }
+
+@article{tan2021efficient,
+  title={Efficient Semantic Image Synthesis via Class-Adaptive Normalization},
+  author={Tan, Zhentao and Chen, Dongdong and Chu, Qi and Chai, Menglei and Liao, Jing and He, Mingming and Yuan, Lu and Hua, Gang and Yu, Nenghai},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2021},
+  publisher={IEEE}
+}

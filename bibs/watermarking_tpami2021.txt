@@ -7,10 +7,3 @@
   pages={12805--12812},
   year={2020}
 }
-
-@article{zhang2021deep,
-  title={Deep Model Intellectual Property Protection via Deep Watermarking},
-  author={Zhang, Jie and Chen, Dongdong and Liao, Jing and Zhang, Weiming and Feng, Huamin and Hua, Gang and Yu, Nenghai},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year={2021}
-}
