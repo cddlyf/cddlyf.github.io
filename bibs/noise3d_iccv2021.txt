@@ -1,0 +1,6 @@
+@inproceedings{shuquan2021noise3d,
+  title={Learning with Noisy Labels for Robust Point Cloud Segmentation},
+  author={Shuquan Ye, Dongdong Chen, Songfang Han, Jing Liao},
+  booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+  year={2021}
+}

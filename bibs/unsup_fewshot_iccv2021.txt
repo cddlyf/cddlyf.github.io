@@ -1,0 +1,6 @@
+@inproceedings{suichan2021improve,
+  title={Improve Unsupervised Pretraining for Few-label Transfer},
+  author={Suichan Li, Dongdong Chen, Yinpeng Chen, Lu Yuan, Lei Zhang, Qi Chu, Bin Liu, Nenghai Yu},
+  booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+  year={2021}
+}

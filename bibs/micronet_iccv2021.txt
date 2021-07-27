@@ -1,0 +1,6 @@
+@inproceedings{yunsheng2021micronet,
+  title={Improving Image Recognition with Extremely Low FLOPs},
+  author={Yunsheng Li, Yinpeng Chen, Xiyang Dai, Dongdong Chen, Mengchen Liu, Lu Yuan, Zicheng Liu, Lei Zhang, Nuno Vasconcelos},
+  booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+  year={2021}
+}
