@@ -1,6 +1,0 @@
-@article{dong2020greedyfool,
-  title={GreedyFool: Distortion-Aware Sparse Adversarial Attack},
-  author={Dong, Xiaoyi and Chen, Dongdong and Bao, Jianmin and Qin, Chuan and Yuan, Lu and Zhang, Weiming and Yu, Nenghai and Chen, Dong},
-  journal={NeurIPs 2020},
-  year={2020}
-}

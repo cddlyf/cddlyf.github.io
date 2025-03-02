@@ -1,9 +1,0 @@
-@inproceedings{yan2014automatic,
-  title={Automatic Extraction of Moving Objects from Image and LIDAR Sequences},
-  author={Yan, Jizhou and Chen, Dongdong and Myeong, Heesoo and Shiratori, Takaaki and Ma, Yi},
-  booktitle={3D Vision (3DV), 2014 2nd International Conference on},
-  volume={1},
-  pages={673--680},
-  year={2014},
-  organization={IEEE}
-}

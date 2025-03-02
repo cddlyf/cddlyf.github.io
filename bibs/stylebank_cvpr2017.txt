@@ -1,6 +1,0 @@
-@inproceedings{chen2017stylebank,
-  title={Stylebank: An explicit representation for neural image style transfer},
-  author={Chen, Dongdong and Yuan, Lu and Liao, Jing and Yu, Nenghai and Hua, Gang},
-  booktitle={Computer Vision and Pattern Recognition (CVPR), 2017 IEEE Conference on},
-  year={2017}
-}

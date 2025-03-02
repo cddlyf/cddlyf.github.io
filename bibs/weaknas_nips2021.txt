@@ -1,6 +1,0 @@
-@article{wu2021strongernas,
-  title={Stronger NAS with Weaker Predictors},
-  author={Wu, Junru and Dai, Xiyang and Chen, Dongdong and Chen, Yinpeng and Liu, Mengchen and Yu, Ye and Wang, Zhangyang and Liu, Zicheng and Chen, Mei and Yuan, Lu},
-  journal={Advances in Neural Information Processing Systems},
-  year={2021}
-}

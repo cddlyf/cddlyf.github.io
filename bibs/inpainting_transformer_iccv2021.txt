@@ -1,6 +1,0 @@
-@article{wan2021high,
-  title={High-Fidelity Pluralistic Image Completion with Transformers},
-  author={Wan, Ziyu and Zhang, Jingbo and Chen, Dongdong and Liao, Jing},
-  journal={Proceedings of the IEEE International Conference on Computer Vision},
-  year={2021}
-}

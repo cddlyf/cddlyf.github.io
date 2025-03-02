@@ -1,6 +1,0 @@
-@article{dai2020data,
-  title={DA-NAS: Data Adapted Pruning for Efficient Neural Architecture Search},
-  author={Dai, Xiyang and Chen, Dongdong and Liu, Mengchen and Chen, Yinpeng and Yuan, Lu},
-  journal={ECCV 2020},
-  year={2020}
-}

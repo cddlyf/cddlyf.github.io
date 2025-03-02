@@ -1,6 +1,0 @@
-@article{chen2020dynamic,
-  title={Dynamic ReLU},
-  author={Chen, Yinpeng and Dai, Xiyang and Liu, Mengchen and Chen, Dongdong and Yuan, Lu and Liu, Zicheng},
-  journal={arXiv preprint arXiv:2003.10027},
-  year={2020}
-}

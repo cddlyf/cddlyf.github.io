@@ -1,6 +1,0 @@
-@inproceedings{fan2018decouple,
-  title={Decouple Learning for Parameterized Image Operators},
-  author={Fan, Qingnan and Chen, Dongdong and Yuan, Lu and Hua, Gang and Yu, Nenghai and Chen, Baoquan},
-  booktitle={ECCV 2018, European Conference on Computer Vision},
-  year={2018}
-}

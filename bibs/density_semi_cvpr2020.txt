@@ -1,7 +1,0 @@
-@inproceedings{li2020density,
-  title={Density-Aware Graph for Deep Semi-Supervised Visual Recognition},
-  author={Li, Suichan and Liu, Bin and Chen, Dongdong and Chu, Qi and Yuan, Lu and Yu, Nenghai},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={13400--13409},
-  year={2020}
-}

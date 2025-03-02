@@ -1,6 +1,0 @@
-@article{he2018deep,
-  title={Deep Exemplar-based Colorization},
-  author={He, Mingming and Chen, Dongdong and Liao, Jing and Sander, Pedro V and Yuan, Lu},
-  journal={ACM Transactions on Graphics (Proc. of Siggraph 2018)},
-  year={2018}
-}
